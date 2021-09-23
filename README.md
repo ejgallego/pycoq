@@ -58,9 +58,6 @@ Our continuous integration should contain up-to-date build instructions.
 
 As of today, the only documentation we have is the small example below.
 
-**Important:** Right now, error handling is broken, and will make
-PyCoq likely segfault.
-
 ### Use example:
 
 ```python
