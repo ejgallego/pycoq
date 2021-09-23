@@ -58,6 +58,10 @@ Our continuous integration should contain up-to-date build instructions.
 
 As of today, the only documentation we have is the small example below.
 
+Note however, that if you are familiar with the [SerAPI protocol](https://github.com/ejgallego/coq-serapi), you will quickly
+get used to the current API as it basically mirrors the one there [and it is derived automatically, so SerAPI's documentation could
+be considered as canonical for pyCoq for now]
+
 ### Use example:
 
 ```python
