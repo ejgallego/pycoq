@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - v8.13
+  pull_request:
+    branches:
+    - v8.13
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        ocaml-version: [4.11.1, 4.12.0]
+    env:
+      OPAMJOBS: "2"
+      OPAMROOTISOK: "true"
+      OPAMYES: "true"
+      NJOBS: "2"
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up OCaml ${{ matrix.ocaml-version }}
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+      - name: OPAM dependencies setup
+        run: |
+          opam repos add coq-released http://coq.inria.fr/opam/released
+          opam config set-global jobs $NJOBS
+          opam install -y --deps-only -j $NJOBS coq-serapi
+          opam pin add -y ppx_python https://github.com/ejgallego/ppx_python.git#fixup
+          opam list
+      - name: Build and Test PyCoq
+        run: |
+          set -e
+          eval $(opam env)
+          make && make test
