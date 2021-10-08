@@ -52,6 +52,14 @@ Once the right dependencies have been installed, you can do:
 $ make && dune build examples/test.py && dune exec -- python3 _build/default/examples/test.py
 ```
 
+If you want an interactive environment, use:
+```
+$ make && dune exec -- python3
+>>> import os
+>>> os.chdir('_build/default')
+>>> import pycoq, coq
+```
+
 Our continuous integration should contain up-to-date build instructions.
 
 ### Documentation
