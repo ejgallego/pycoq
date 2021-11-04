@@ -1,0 +1,35 @@
+opam-version: "2.0"
+maintainer:   "e@x80.org"
+homepage:     "https://github.com/ejgallego/pycoq"
+bug-reports:  "https://github.com/ejgallego/pycoq/issues"
+dev-repo:     "git+https://github.com/ejgallego/pycoq.git"
+license:      "GPL-3.0-or-later"
+doc:          "https://ejgallego.github.io/pycoq/"
+
+synopsis:     "Python Bindinds for the Coq Proof Assistant"
+description:  """
+PyCoq does provide bindings for the Coq proof assistant
+"""
+
+authors: [
+  "Emilio Jesús Gallego Arias"
+]
+
+depends: [
+  "ocaml"               {           >= "4.07.0"              }
+  "coq"                 { !pinned & >= "8.13.0" & < "8.14"   }
+  "cmdliner"            {           >= "1.0.0"               }
+  "ocamlfind"           {           >= "1.8.0"               }
+  "sexplib"             {           >= "v0.13.0"             }
+  "dune"                {           >= "2.0.1"               }
+  "ppx_import"          { build   & >= "1.5-3"               }
+  "ppx_deriving"        {           >= "4.2.1"               }
+  "ppx_sexp_conv"       {           >= "v0.13.0" & < "v0.15" }
+  "yojson"              {           >= "1.7.0"               }
+  "ppx_deriving_yojson" {           >= "3.4"                 }
+  "pythonlib"           {           >= "v0.14.0"             }
+# Disabled due to ppx_python >= 0.15 and ppx_import < 2.0 not getting along
+# "ppx_python"          {           >= "v0.15.0"             }
+]
+
+build: [ "dune" "build" "-p" name "-j" jobs ]
