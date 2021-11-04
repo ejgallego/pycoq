@@ -35,17 +35,13 @@ build SerAPI; usually, this can be achieved using the OPAM package
 manager and doing:
 ```
 $ opam install --deps-only coq-serapi
-$ opam install ppx_python pythonlib
+$ opam install pythonlib
 ```
 for the 0.13 version that targets Coq v8.13; note that OCaml >= 4.11.0
 is recommended, and >= 4.08.0 required by the dependencies.
 
-For the moment, PyCoq requires a special version of `ppx_python`,
-which can be obtained also using OPAM:
-```
-$ opam pin add -y ppx_python https://github.com/ejgallego/ppx_python.git#fixup
-
-```
+For the moment, PyCoq requires a special version of `ppx_python`, while the situation stabilizes
+in the OPAM repository we have vendored it in the SerAPI branch we use.
 
 Once the right dependencies have been installed, you can do:
 ```
@@ -60,7 +56,8 @@ $ make && dune exec -- python3
 >>> import pycoq, coq
 ```
 
-Our continuous integration should contain up-to-date build instructions.
+Our continuous integration should contain up-to-date build
+instructions.
 
 ### Documentation
 
