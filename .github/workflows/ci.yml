@@ -36,9 +36,11 @@ jobs:
         run: |
           opam repos add coq-released http://coq.inria.fr/opam/released
           opam config set-global jobs $NJOBS
-          opam install --deps-only coq-serapi
-          opam install pythonlib ppx_python
-          opam pin add ppx_python https://github.com/ejgallego/ppx_python.git#fixup
+          opam install --deps-only .
+          opam install pythonlib
+          # Disabled due to vendoring
+          # opam install pythonlib ppx_python
+          # opam pin add ppx_python https://github.com/ejgallego/ppx_python.git#fixup
           opam list
       - name: Build and Test PyCoq
         run: |
