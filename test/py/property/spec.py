@@ -1,5 +1,5 @@
-from pycoq import coq
-import pycoq.pycoq
+import pycoq
+import coq
 from hypothesis import given
 from hypothesis.strategies import integers
 
@@ -24,5 +24,18 @@ def test_lia(x: int, y: int):
         opts,
     )
 
-    print(dict(res))
-    assert x == y
+    res = coq.exec(5)
+    resdict = dict(res)
+    assert "Completed" in resdict.keys()
+    assert resdict["Completed"] is None
+
+    opts = {"limit": 100, "preds": [], "sid": 3, "pp": ppopts, "route": 0}
+    cmd = ('Goals', None)
+    res = coq.query(opts, cmd)
+    resdict = dict(res)
+    assert "Completed" in resdict.keys()
+    assert resdict["Completed"] is None
+
+
+if __name__=="__main__":
+    test_lia()
