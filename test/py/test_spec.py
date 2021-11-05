@@ -1,5 +1,5 @@
-import coq
-import pycoq
+from pycoq import coq
+import pycoq.pycoq
 from hypothesis import given
 from hypothesis.strategies import integers
 
