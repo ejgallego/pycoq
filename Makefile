@@ -19,8 +19,10 @@ pyci: build_pycoq
 	pip install .[dev]
 	black .
 	flake8 .
-	pytype .
-	pytest testpy
+	# pytype .  # haven't gotten `dune` to work with this yet.
+	# `dune` doesn't work with `pytest` yet.
+	# dune exec -- python3 test/py/property/spec.py  # module state blocks property tests.
+	dune exec -- python3 test/py/unit/spec.py
 
 nix_build_pycoq:
 	nix-build nix/opam2nix.nix
