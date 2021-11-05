@@ -13,7 +13,9 @@ if __name__ == "__main__":
     # Add a full document chunk [mainly parsing]
     opts = {"newtip": None, "ontop": 1, "lim": 20}
     res = coq.add(
-        "Lemma addnC n m : n + m = m + n. Proof. now induction n; simpl; auto; rewrite IHn. Qed.",
+        """
+        Lemma addnC n m : n + m = m + n. Proof. now induction n; simpl; auto; rewrite IHn. Qed.
+    """,
         opts,
     )
 

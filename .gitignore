@@ -4,3 +4,4 @@ _build
 result
 .pytype
 pycoq.egg-info/
+.hypothesis

@@ -10,10 +10,10 @@ build_pycoq:
 	cd _build/default && python3 setup.py build && pip3 install .
 
 examples: build_pycoq
-	dune build examples/add_commutative.py examples/definitions_ast.py examples/error.py
+	dune build examples/add_commutative.py examples/definitions_ast.py examples/syntax_error.py
 	dune exec -- python3 _build/default/examples/add_commutative.py
 	dune exec -- python3 _build/default/examples/definitions_ast.py
-	dune exec -- python3 _build/default/examples/error.py
+	dune exec -- python3 _build/default/examples/syntax_error.py
 
 pyci: build_pycoq
 	pip install .[dev]
@@ -30,10 +30,10 @@ nix_build_pycoq:
 	nix-shell nix/default.nix --run "cd _build/default && python3 setup.py build && pip3 install ."
 
 nix_examples: nix_build_pycoq
-	nix-shell nix/default.nix --run "dune build examples/add_commutative.py examples/definitions_ast.py examples/error.py"
+	nix-shell nix/default.nix --run "dune build examples/add_commutative.py examples/definitions_ast.py examples/syntax_error.py"
 	nix-shell nix/default.nix --run "dune exec -- python3 _build/default/examples/add_commutative.py"
 	nix-shell nix/default.nix --run "dune exec -- python3 _build/default/examples/definitions_ast.py"
-	nix-shell nix/default.nix --run "dune exec -- python3 _build/default/examples/error.py"
+	nix-shell nix/default.nix --run "dune exec -- python3 _build/default/examples/syntax_error.py"
 
 allpy: build_pycoq pyci examples
 
@@ -42,3 +42,4 @@ help:
 
 clean:
 	rm -rf _build
+	rm -r .pytype
