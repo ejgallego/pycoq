@@ -17,7 +17,7 @@ jobs:
       fail-fast: false
       matrix:
         ocaml-version: [4.11.1, 4.12.0]
-        python-version: [3.6, 3.7, 3.8, 3.9, 3.10]
+        python-version: [3.6.15, 3.7.12, 3.8.12, 3.9.6, 3.10.0, 3.11.0-alpha.1]
         os: [ubuntu-20.04]
     env:
       OPAMJOBS: "2"
@@ -53,6 +53,12 @@ jobs:
           eval $(opam env)
           make build_pycoq
       - name: Validate examples
-        run: make examples
+        run: |
+          set -e
+          eval $(opam env)
+          make examples
       - name: Lint, typecheck, and test python
-        run: make pyci
+        run: |
+          set -e
+          eval $(opam env)
+          make pyci
