@@ -30,12 +30,12 @@ def test_lia(x: int, y: int):
     assert resdict["Completed"] is None
 
     opts = {"limit": 100, "preds": [], "sid": 3, "pp": ppopts, "route": 0}
-    cmd = ('Goals', None)
+    cmd = ("Goals", None)
     res = coq.query(opts, cmd)
     resdict = dict(res)
     assert "Completed" in resdict.keys()
     assert resdict["Completed"] is None
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     test_lia()
