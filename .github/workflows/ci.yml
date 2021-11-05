@@ -1,4 +1,4 @@
-name: CI
+name: PyCoq CI
 
 on:
   push:
@@ -37,14 +37,16 @@ jobs:
           opam repos add coq-released http://coq.inria.fr/opam/released
           opam config set-global jobs $NJOBS
           opam install --deps-only .
-          opam install pythonlib
           # Disabled due to vendoring
           # opam install pythonlib ppx_python
           # opam pin add ppx_python https://github.com/ejgallego/ppx_python.git#fixup
           opam list
-      - name: Build and Test PyCoq
+      - name: Build PyCoq
         run: |
           set -e
           eval $(opam env)
-          make
-          make test
+          make build_pycoq
+      - name: Validate examples
+        run: make examples
+      - name: Lint, typecheck, and test python
+        run: make pyci
