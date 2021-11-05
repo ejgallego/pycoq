@@ -1,0 +1,6 @@
+# dev
+pytest
+hypothesis
+flake8
+black
+pytype

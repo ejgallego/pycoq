@@ -2,3 +2,5 @@ __pycache__
 _build
 *~
 result
+.pytype
+pycoq.egg-info/

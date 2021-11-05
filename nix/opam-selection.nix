@@ -890,7 +890,7 @@ in
       {
         inherit (selection) yojson sexplib pythonlib pyml ppxlib
         ppx_sexp_conv ppx_import ppx_deriving_yojson ppx_deriving ppx_base
-        ocamlfind ocaml dune cmdliner;
+        ocamlfind ocaml dune coq cmdliner;
       };
       opamSrc = "pycoq.opam";
     };
