@@ -28,6 +28,9 @@ depends: [
   "yojson"              {           >= "1.7.0"               }
   "ppx_deriving_yojson" {           >= "3.4"                 }
   "pythonlib"           {           >= "v0.14.0"             }
+  "ppx_base"
+  "ppxlib"              {           >= "0.15.0" & < "0.18.0" }
+  "pyml"                {           >= "20200115"            }
 # Disabled due to ppx_python >= 0.15 and ppx_import < 2.0 not getting along
 # "ppx_python"          {           >= "v0.15.0"             }
 # For the vendored ppx_python

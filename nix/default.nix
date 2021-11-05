@@ -1,5 +1,4 @@
-{ nixpkgsTag ? import ./tag.nix
-, pkgs ? import ./pkgs.nix {}
+{ pkgs ? import ./pkgs.nix {}
 , opam2nix ? import ./opam2nix.nix {}
 }:
 let

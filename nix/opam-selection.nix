@@ -888,8 +888,9 @@ in
       src = self.directSrc "pycoq";
       opamInputs = 
       {
-        inherit (selection) yojson sexplib pythonlib ppx_sexp_conv ppx_import
-        ppx_deriving_yojson ppx_deriving ocamlfind ocaml dune cmdliner;
+        inherit (selection) yojson sexplib pythonlib pyml ppxlib
+        ppx_sexp_conv ppx_import ppx_deriving_yojson ppx_deriving ppx_base
+        ocamlfind ocaml dune cmdliner;
       };
       opamSrc = "pycoq.opam";
     };
