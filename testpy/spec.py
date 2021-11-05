@@ -1,2 +1,0 @@
-import coq
-import pycoq
