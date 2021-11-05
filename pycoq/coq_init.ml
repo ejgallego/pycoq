@@ -48,13 +48,20 @@ let init () =
     | _ -> ()
   in
 
+  let dft_ml_path, vo_path =
+    Serapi.Serapi_paths.coq_loadpath_default ~implicit:true ~coq_path:Coq_config.coqlib in
+  let ml_path = dft_ml_path in
+  let vo_path = vo_path in
+
   (* coq initialization *)
   coq_init
     { fb_handler
-    ; ml_load    = None
+    ; ml_load = None
     ; debug = true
     ; allow_sprop = true
     ; indices_matter = false
+    ; ml_path
+    ; vo_path
     } Caml.Format.err_formatter;
 
   (* document initialization *)
@@ -68,20 +75,13 @@ let init () =
     ; async_proofs_cmd_error_resilience = false
     } in
 
-  let injections = [Stm.RequireInjection ("Coq.Init.Prelude", None, Some false)] in
-
-  let dft_ml_path, vo_path =
-    Serapi.Serapi_paths.coq_loadpath_default ~implicit:true ~coq_path:Coq_config.coqlib in
-  let ml_load_path = dft_ml_path in
-  let vo_load_path = vo_path in
+  let injections = [Coqargs.RequireInjection ("Coq.Init.Prelude", None, Some false)] in
 
   let sertop_dp = Names.(DirPath.make [Id.of_string "PyTop"]) in
   let doc_type = Stm.Interactive (TopLogical sertop_dp) in
 
   let ndoc = { Stm.doc_type
              ; injections
-             ; ml_load_path
-             ; vo_load_path
              ; stm_options
              } in
 
