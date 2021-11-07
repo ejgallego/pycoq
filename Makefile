@@ -9,10 +9,9 @@ help:
 
 # coq-serapi.install is required so plugins are in place [runtime dep]
 $(BUILDDIR)/pycoq/$(PYNAME).so:
-	dune build $(SERAPI) pycoq/$(PYNAME).so pycoq/__init__.py setup.py
-	cp requirements.txt _build/default/requirements.txt && cp README.md _build/default/README.md
-	cd _build/default && dune exec -- python3 setup.py build && dune exec -- pip3 install .
-	eval $(shell opam env)
+	dune build $(SERAPI) pycoq/$(PYNAME).so pycoq/__init__.py setup.py requirements.txt README.md
+	# cd _build/default && dune exc -- python3 setup.py build && dune exec -- pip3 install .
+	# eval $(shell opam env)
 
 examples: $(BUILDDIR)/pycoq/$(PYNAME).so
 	dune build examples/add_commutative.py examples/definitions_ast.py examples/syntax_error.py
@@ -44,12 +43,12 @@ nix_examples:
 
 all: clean $(BUILDDIR)/pycoq/$(PYNAME).so pyci examples
 
-nix: nix_build_pycoq nix_examples
+nix: nix_build_pycoq nix_examples nix_pyci
 
 help:
 	@echo "If you have nix installed, try 'make nix_examples'. Else, try 'make examples'."
 
 clean:
-	rm -rf _build
+	dune clean
 	rm -rf pycoq.egg-info
 	rm -rf .pytype

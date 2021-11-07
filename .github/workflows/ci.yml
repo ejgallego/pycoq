@@ -51,8 +51,8 @@ jobs:
         run: |
           set -e
           eval $(opam env)
-          make build_pycoq
-      - name: Validate examples
+          make _build/default/pycoq/pycoq.so
+      - name: Verify examples at least compile
         run: |
           set -e
           eval $(opam env)
