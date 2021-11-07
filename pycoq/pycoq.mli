@@ -1,1 +1,1 @@
-(* emtpy *)
+(* empty *)

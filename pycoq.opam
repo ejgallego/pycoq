@@ -6,7 +6,7 @@ dev-repo:     "git+https://github.com/ejgallego/pycoq.git"
 license:      "GPL-3.0-or-later"
 doc:          "https://ejgallego.github.io/pycoq/"
 
-synopsis:     "Python Bindinds for the Coq Proof Assistant"
+synopsis:     "Python Bindings for the Coq Proof Assistant"
 description:  """
 PyCoq does provide bindings for the Coq proof assistant
 """

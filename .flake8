@@ -1,0 +1,6 @@
+[flake8]
+# ignore F401 is essential until we figure out what's up with `import pycoq`
+ignore = F401
+max-line-length = 100
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist
+max-complexity = 10
