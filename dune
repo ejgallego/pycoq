@@ -1,0 +1,6 @@
+(rule
+    (targets pycoq.so)
+    (action (progn (run python3 setup.py build) (run pip3 install .))))
+(rule
+    (targets test/py/unit/spec.py)
+    (action (progn (run python3 test/py/unit/spec.py))))
