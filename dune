@@ -1,0 +1,12 @@
+(rule
+ (alias python)
+ (deps
+  (universe)
+  (package coq-serapi)
+   ; at some point maybe we prefer (glob pycoq/*.py)
+   pycoq/__init__.py
+   pycoq/pycoq.so)
+ (action
+  (progn
+   (run python3 %{dep:setup.py} build)
+   (run pip3 install .))))
