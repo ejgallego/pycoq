@@ -30,12 +30,12 @@
 
 (rule
  (alias runtest)
- (action (diff test.out test.log)))
+ (action (diff out/test.out test.log)))
 
 (rule
  (alias runtest)
- (action (diff test2.out test2.log)))
+ (action (diff out/test2.out test2.log)))
 
 (rule
  (alias runtest)
- (action (diff error.out error.log)))
+ (action (diff out/error.out error.log)))
