@@ -1,6 +1,30 @@
+; In 3.0 we can use directory targets
 (rule
-    (targets pycoq.so)
-    (action (progn (run python3 setup.py build) (run pip3 install .))))
+ (alias pip-build)
+ (deps
+  (universe)
+  (package coq-serapi)
+   requirements.txt
+   README.md
+   ; at some point maybe we prefer (glob pycoq/*.py)
+   pycoq/__init__.py
+   pycoq/pycoq.so)
+ (targets build)
+ (action
+  (progn
+   (run python3 %{dep:setup.py} build))))
+
 (rule
-    (targets test/py/unit/spec.py)
-    (action (progn (run python3 test/py/unit/spec.py))))
+ (alias pip-install)
+ (deps
+  (universe)
+  (package coq-serapi)
+   requirements.txt
+   README.md
+   ; at some point maybe we prefer (glob pycoq/*.py)
+   pycoq/__init__.py
+   pycoq/pycoq.so)
+ (action
+  (progn
+   (run python3 %{dep:setup.py} build)
+   (run pip3 install .))))
