@@ -5,3 +5,4 @@ result
 .pytype
 pycoq.egg-info/
 .hypothesis
+.pytest_cache

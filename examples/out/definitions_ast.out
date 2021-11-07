@@ -1,0 +1,35 @@
+file_loaded: Coq.Init.Prelude, /home/quinn/.opam/default/lib/coq/theories/Init/Prelude.vo
+file_loaded: Coq.Init.Notations, /home/quinn/.opam/default/lib/coq/theories/Init/Notations.vo
+file_loaded: Coq.Init.Ltac, /home/quinn/.opam/default/lib/coq/theories/Init/Ltac.vo
+file_loaded: Coq.Init.Logic, /home/quinn/.opam/default/lib/coq/theories/Init/Logic.vo
+file_loaded: Coq.Init.Datatypes, /home/quinn/.opam/default/lib/coq/theories/Init/Datatypes.vo
+file_loaded: Coq.Init.Logic_Type, /home/quinn/.opam/default/lib/coq/theories/Init/Logic_Type.vo
+file_loaded: Coq.Init.Specif, /home/quinn/.opam/default/lib/coq/theories/Init/Specif.vo
+file_loaded: Coq.Init.Decimal, /home/quinn/.opam/default/lib/coq/theories/Init/Decimal.vo
+file_loaded: Coq.Init.Hexadecimal, /home/quinn/.opam/default/lib/coq/theories/Init/Hexadecimal.vo
+file_loaded: Coq.Init.Number, /home/quinn/.opam/default/lib/coq/theories/Init/Number.vo
+file_loaded: Coq.Init.Nat, /home/quinn/.opam/default/lib/coq/theories/Init/Nat.vo
+file_loaded: Coq.Init.Byte, /home/quinn/.opam/default/lib/coq/theories/Init/Byte.vo
+file_loaded: Coq.Init.Numeral, /home/quinn/.opam/default/lib/coq/theories/Init/Numeral.vo
+file_loaded: Coq.Init.Peano, /home/quinn/.opam/default/lib/coq/theories/Init/Peano.vo
+file_loaded: Coq.Init.Wf, /home/quinn/.opam/default/lib/coq/theories/Init/Wf.vo
+file_loaded: Coq.Init.Tactics, /home/quinn/.opam/default/lib/coq/theories/Init/Tactics.vo
+file_loaded: Coq.Init.Tauto, /home/quinn/.opam/default/lib/coq/theories/Init/Tauto.vo
+Processing in master
+Processed
+🐓🐍🐓🐍 Coq's initialization complete 🐍🐓🐍🐓
+Processing in master
+Processing in master
+Processed
+Processed
+Processed
+==> Adding a sentence
+[('Added', (2, {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 0, 'ep': 18}, ('NewTip', None))), ('Completed', None)]
+==> Adding another sentence
+[('Added', (3, {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 0, 'ep': 18}, ('NewTip', None))), ('Completed', None)]
+==> Checking the second sentence
+[('Completed', None)]
+==> Printing the AST
+[('ObjList', ([('CoqAst', ({'v': {'control': [], 'attrs': [], 'expr': ('VernacDefinition', ((('NoDischarge', None), ('Definition', None)), ({'v': ('Name', (('Id', ('b',)),)), 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 11, 'ep': 12}}, None), ('DefineBody', ([], None, {'v': ('CPrim', (('Number', ((('SPlus', None), {'int': '2', 'frac': '', 'exp': ''}),)),)), 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 16, 'ep': 17}}, None))))}, 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 0, 'ep': 18}},))],)), ('Completed', None)]
+==> Formatting the AST
+[('ObjList', ([('CoqString', ('Definition b := 2.',))],)), ('Completed', None)]
