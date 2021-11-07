@@ -14,7 +14,7 @@ install: $(BUILDDIR)/pip.installed
 install-dev: $(BUILDDIR)/pip.dev.installed
 
 help:
-	@echo targets {build,python,test,clean}
+	@echo targets {build,install,install-dev,examples,test,lint,typecheck,clean}
 
 help:
 	@echo targets {build,python,test,clean}
