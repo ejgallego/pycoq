@@ -15,7 +15,7 @@ install: $(BUILDDIR)/pip.installed
 install-dev: $(BUILDDIR)/pip.dev.installed
 
 help:
-	@echo targets {build,python,test,clean}
+	@echo targets {build,install,install-dev,examples,test,lint,typecheck,clean}
 
 # coq-serapi.install is required so plugins are in place [runtime dep]
 $(BUILDDIR)/pycoq/$(PYNAME).so:
