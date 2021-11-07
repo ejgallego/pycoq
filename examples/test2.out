@@ -1,0 +1,34 @@
+file_loaded: Coq.Init.Prelude, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Prelude.vo
+file_loaded: Coq.Init.Notations, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Notations.vo
+file_loaded: Coq.Init.Ltac, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Ltac.vo
+file_loaded: Coq.Init.Logic, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Logic.vo
+file_loaded: Coq.Init.Datatypes, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Datatypes.vo
+file_loaded: Coq.Init.Logic_Type, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Logic_Type.vo
+file_loaded: Coq.Init.Specif, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Specif.vo
+file_loaded: Coq.Init.Decimal, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Decimal.vo
+file_loaded: Coq.Init.Hexadecimal, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Hexadecimal.vo
+file_loaded: Coq.Init.Number, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Number.vo
+file_loaded: Coq.Init.Nat, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Nat.vo
+file_loaded: Coq.Init.Byte, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Byte.vo
+file_loaded: Coq.Init.Numeral, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Numeral.vo
+file_loaded: Coq.Init.Peano, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Peano.vo
+file_loaded: Coq.Init.Wf, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Wf.vo
+file_loaded: Coq.Init.Tactics, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Tactics.vo
+file_loaded: Coq.Init.Tauto, /home/egallego/.opam/dev-coq-pycoq/lib/coq/theories/Init/Tauto.vo
+Processing in master
+Processed
+🐓🐍🐓🐍 Coq's initialization complete 🐍🐓🐍🐓
+Processing in master
+570370:master:0] STM: 5: proof addnC: synch (cause: policy)
+Processing in master
+Processing in master
+Processing in master
+Processed
+Processed
+Processed
+Processed
+Processed
+Processed
+[('ObjList', ([('CoqGoal', ({'goals': [{'info': {'evar': ('Ser_Evar', (6,)), 'name': None}, 'ty': ('App', (('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Logic',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('eq',)))), 0), ('Instance', ([],))),)), [('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Datatypes',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('nat',)))), 0), ('Instance', ([],))),)), ('App', (('Const', ((('Constant', (('MPfile', (('DirPath', ([('Id', ('Nat',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('add',)))), ('Instance', ([],))),)), [('Var', (('Id', ('n',)),)), ('Var', (('Id', ('m',)),))])), ('App', (('Const', ((('Constant', (('MPfile', (('DirPath', ([('Id', ('Nat',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('add',)))), ('Instance', ([],))),)), [('Var', (('Id', ('m',)),)), ('Var', (('Id', ('n',)),))]))])), 'hyp': [([('Id', ('n',)), ('Id', ('m',))], None, ('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Datatypes',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('nat',)))), 0), ('Instance', ([],))),)))]}], 'stack': [], 'bullet': None, 'shelf': [], 'given_up': []},))],)), ('Completed', None)]
+[('ObjList', ([('CoqGoal', ({'goals': [{'info': {'evar': ('Ser_Evar', (6,)), 'name': None}, 'ty': ('App', (('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Logic',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('eq',)))), 0), ('Instance', ([],))),)), [('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Datatypes',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('nat',)))), 0), ('Instance', ([],))),)), ('App', (('Const', ((('Constant', (('MPfile', (('DirPath', ([('Id', ('Nat',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('add',)))), ('Instance', ([],))),)), [('Var', (('Id', ('n',)),)), ('Var', (('Id', ('m',)),))])), ('App', (('Const', ((('Constant', (('MPfile', (('DirPath', ([('Id', ('Nat',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('add',)))), ('Instance', ([],))),)), [('Var', (('Id', ('m',)),)), ('Var', (('Id', ('n',)),))]))])), 'hyp': [([('Id', ('n',)), ('Id', ('m',))], None, ('Ind', (((('MutInd', (('MPfile', (('DirPath', ([('Id', ('Datatypes',)), ('Id', ('Init',)), ('Id', ('Coq',))],)),)), ('Id', ('nat',)))), 0), ('Instance', ([],))),)))]}], 'stack': [], 'bullet': None, 'shelf': [], 'given_up': []},))],)), ('Completed', None)]
+[('ObjList', ([('CoqString', ('\n  n, m : nat\n============================\nn + m = m + n',))],)), ('Completed', None)]

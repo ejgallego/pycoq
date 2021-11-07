@@ -1,32 +1,41 @@
 (rule
- (alias runtest)
  (deps
   (:test-file test.py)
   (package coq-serapi)
    ../pycoq/pycoq.so)
- (targets test.out)
+ (targets test.log)
  (action
    (with-outputs-to %{targets}
     (run python3 %{test-file}))))
 
 (rule
- (alias runtest)
  (deps
   (:test-file test2.py)
   (package coq-serapi)
    ../pycoq/pycoq.so)
- (targets test2.out)
+ (targets test2.log)
+ (action
+   (with-outputs-to %{targets}
+    (run python3 %{test-file}))))
+
+(rule
+ (deps
+  (:test-file error.py)
+  (package coq-serapi)
+   ../pycoq/pycoq.so)
+ (targets error.log)
  (action
    (with-outputs-to %{targets}
     (run python3 %{test-file}))))
 
 (rule
  (alias runtest)
- (deps
-  (:test-file error.py)
-  (package coq-serapi)
-   ../pycoq/pycoq.so)
- (targets error.out)
- (action
-   (with-outputs-to %{targets}
-    (run python3 %{test-file}))))
+ (action (diff test.out test.log)))
+
+(rule
+ (alias runtest)
+ (action (diff test2.out test2.log)))
+
+(rule
+ (alias runtest)
+ (action (diff error.out error.log)))
