@@ -51,14 +51,24 @@ jobs:
         run: |
           set -e
           eval $(opam env)
-          make _build/default/pycoq/pycoq.so
-      - name: Verify examples at least compile
+          make build
+      - name: Verify examples compile and pass the diff test
         run: |
           set -e
           eval $(opam env)
           make examples
-      - name: Lint, typecheck, and test python
+      - name: Lint python
         run: |
           set -e
           eval $(opam env)
-          make pyci
+          make lint
+      - name: Typecheck python (INACTIVE)
+        run: |
+          set -e
+          eval $(opam env)
+          echo "don't make typecheck yet, it's not working."
+      - name: Test python
+        run: |
+          set -e
+          eval $(opam env)
+          make test

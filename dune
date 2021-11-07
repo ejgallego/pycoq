@@ -28,3 +28,38 @@
   (progn
    (run python3 %{dep:setup.py} build)
    (run pip3 install .))))
+
+(rule
+ (alias pip-install-dev)
+ (deps
+  (universe)
+  (package coq-serapi)
+  requirements.txt
+  README.md
+  pycoq/__init__.py
+  pycoq/pycoq.so)
+ (action
+  (progn
+   (run pip3 install .[dev]))))
+
+(rule
+ (alias lint)
+ (deps
+  (universe)
+  (package coq-serapi)
+  pycoq/__init__.py
+  pycoq/pycoq.so)
+ (action
+  (progn
+   (run flake8 .))))
+
+(rule
+ (alias typecheck)
+ (deps
+  (universe)
+  (package coq-serapi)
+  pycoq/__init__.py
+  pycoq/pycoq.so)
+ (action
+  (progn
+   (run pytype .))))
