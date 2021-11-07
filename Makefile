@@ -1,4 +1,4 @@
-.PHONY: python build test clean help
+.PHONY: help build install test clean
 
 PYNAME=pycoq
 SERAPI=coq-serapi/coq-serapi.install
@@ -10,8 +10,8 @@ help:
 build:
 	dune build $(SERAPI) pycoq/$(PYNAME).so
 
-python:
-	dune build @python
+install:
+	dune build @pip-install
 
 test:
 	dune build @examples/runtest

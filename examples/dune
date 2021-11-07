@@ -2,31 +2,34 @@
  (deps
   (:test-file test.py)
   (package coq-serapi)
-   ../pycoq/pycoq.so)
+   ../build)
  (targets test.log)
  (action
    (with-outputs-to %{targets}
-    (run python3 %{test-file}))))
+    (setenv PYTHONPATH ../build/lib
+     (run python3 %{test-file})))))
 
 (rule
  (deps
   (:test-file test2.py)
   (package coq-serapi)
-   ../pycoq/pycoq.so)
+   ../build)
  (targets test2.log)
  (action
    (with-outputs-to %{targets}
-    (run python3 %{test-file}))))
+    (setenv PYTHONPATH ../build/lib
+     (run python3 %{test-file})))))
 
 (rule
  (deps
   (:test-file error.py)
   (package coq-serapi)
-   ../pycoq/pycoq.so)
+   ../build)
  (targets error.log)
  (action
    (with-outputs-to %{targets}
-    (run python3 %{test-file}))))
+    (setenv PYTHONPATH ../build/lib
+     (run python3 %{test-file})))))
 
 (rule
  (alias runtest)
