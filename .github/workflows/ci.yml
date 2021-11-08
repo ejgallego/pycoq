@@ -1,4 +1,4 @@
-name: CI
+name: PyCoq CI
 
 on:
   push:
@@ -50,4 +50,5 @@ jobs:
       - name: Validate diff checks of `examples`
         run: |
           set -e
+          eval $(opam env)
           make examples
