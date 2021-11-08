@@ -1,4 +1,4 @@
-name: CI
+name: PyCoq CI
 
 on:
   push:
@@ -42,9 +42,13 @@ jobs:
           # opam install pythonlib ppx_python
           # opam pin add ppx_python https://github.com/ejgallego/ppx_python.git#fixup
           opam list
-      - name: Build and Test PyCoq
+      - name: Build PyCoq
         run: |
           set -e
           eval $(opam env)
-          make
-          make test
+          make install
+      - name: Validate diff checks of `examples`
+        run: |
+          set -e
+          eval $(opam env)
+          make examples

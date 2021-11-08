@@ -1,9 +1,9 @@
 (rule
  (deps
-  (:test-file test.py)
+  (:test-file definitions_ast.py)
   (package coq-serapi)
    ../build)
- (targets test.log)
+ (targets definitions_ast.log)
  (action
    (with-outputs-to %{targets}
     (setenv PYTHONPATH ../build/lib
@@ -11,10 +11,10 @@
 
 (rule
  (deps
-  (:test-file test2.py)
+  (:test-file add_commutative.py)
   (package coq-serapi)
    ../build)
- (targets test2.log)
+ (targets add_commutative.log)
  (action
    (with-outputs-to %{targets}
     (setenv PYTHONPATH ../build/lib
@@ -22,23 +22,23 @@
 
 (rule
  (deps
-  (:test-file error.py)
+  (:test-file syntax_error.py)
   (package coq-serapi)
    ../build)
- (targets error.log)
+ (targets syntax_error.log)
  (action
    (with-outputs-to %{targets}
     (setenv PYTHONPATH ../build/lib
      (run python3 %{test-file})))))
 
 (rule
- (alias runtest)
- (action (diff out/test.out test.log)))
+ (alias run-examples)
+ (action (diff out/definitions_ast.out definitions_ast.log)))
 
 (rule
- (alias runtest)
- (action (diff out/test2.out test2.log)))
+ (alias run-examples)
+ (action (diff out/add_commutative.out add_commutative.log)))
 
 (rule
- (alias runtest)
- (action (diff out/error.out error.log)))
+ (alias run-examples)
+ (action (diff out/syntax_error.out syntax_error.log)))

@@ -45,7 +45,9 @@ in the OPAM repository we have vendored it in the SerAPI branch we use.
 
 Once the right dependencies have been installed, you can do:
 ```
-$ make && dune build examples/test.py && dune exec -- python3 _build/default/examples/test.py
+$ git clone git@github.com:ejgallego/pycoq.git
+$ git submodule update 
+$ make examples
 ```
 
 If you want an interactive environment, use:
