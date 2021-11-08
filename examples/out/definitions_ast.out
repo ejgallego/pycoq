@@ -33,4 +33,3 @@ Processed
 [('ObjList', ([('CoqAst', ({'v': {'control': [], 'attrs': [], 'expr': ('VernacDefinition', ((('NoDischarge', None), ('Definition', None)), ({'v': ('Name', (('Id', ('b',)),)), 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 11, 'ep': 12}}, None), ('DefineBody', ([], None, {'v': ('CPrim', (('Number', ((('SPlus', None), {'int': '2', 'frac': '', 'exp': ''}),)),)), 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 16, 'ep': 17}}, None))))}, 'loc': {'fname': ('ToplevelInput', None), 'line_nb': 1, 'bol_pos': 0, 'line_nb_last': 1, 'bol_pos_last': 0, 'bp': 0, 'ep': 18}},))],)), ('Completed', None)]
 ==> Formatting the AST
 [('ObjList', ([('CoqString', ('Definition b := 2.',))],)), ('Completed', None)]
-sh: 1: dot: not found
