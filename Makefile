@@ -4,7 +4,7 @@ PYNAME=pycoq
 SERAPI=coq-serapi/coq-serapi.install
 
 help:
-	@echo targets {build,python,test,clean}
+	@echo targets {build,install,test,clean}
 
 # coq-serapi.install is required so plugins are in place [runtime dep]
 build:
@@ -17,4 +17,4 @@ test:
 	dune build @examples/runtest
 
 clean:
-	@echo Nothing to display
+	dune clean

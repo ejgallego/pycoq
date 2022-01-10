@@ -40,6 +40,9 @@ $ opam install pythonlib
 for the 0.13 version that targets Coq v8.13; note that OCaml >= 4.11.0
 is recommended, and >= 4.08.0 required by the dependencies.
 
+If that's your first checkout, you'll also have to update the `git`
+submodules, usually using `git submodule update --init --recursive`.
+
 For the moment, PyCoq requires a special version of `ppx_python`, while the situation stabilizes
 in the OPAM repository we have vendored it in the SerAPI branch we use.
 
@@ -50,7 +53,7 @@ $ make install && dune build examples/test.py && dune exec -- python3 _build/def
 
 If you want an interactive environment, use:
 ```
-$ make && dune exec -- python3
+$ make install && dune exec -- python3
 >>> import os
 >>> os.chdir('_build/default')
 >>> import pycoq, coq
